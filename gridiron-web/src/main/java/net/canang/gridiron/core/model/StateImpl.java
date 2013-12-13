@@ -1,8 +1,5 @@
 package net.canang.gridiron.core.model;
 
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -10,13 +7,13 @@ import java.io.Serializable;
  * @author rafizan.baharum
  * @since 6/28/13
  */
-@Indexed
+//@Indexed
 @Entity(name = "State")
 @Table(name = "STATE")
 public class StateImpl implements State, Serializable {
 
     @Id
-    @DocumentId
+//    @DocumentId
     @Column(name = "ID", nullable = false)
     @GeneratedValue(generator = "SEQ_STATE")
     @SequenceGenerator(name = "SEQ_STATE", sequenceName = "SEQ_STATE", allocationSize = 1)

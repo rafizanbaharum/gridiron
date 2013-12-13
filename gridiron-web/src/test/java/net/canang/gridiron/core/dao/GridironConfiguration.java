@@ -62,8 +62,8 @@ public class GridironConfiguration {
         properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.format_sql", "false");
         properties.put("javax.persistence.validation.mode", "none");
-        properties.put("hibernate.search.default.directory_provider", "filesystem");
-        properties.put("hibernate.search.default.indexBase", "./indexes");
+//        properties.put("hibernate.search.default.directory_provider", "filesystem");
+//        properties.put("hibernate.search.default.indexBase", "./indexes");
 
         //properties.put("hibernate.connection.pool_size", "1");
         //properties.put("hibernate.format_sql", "true");

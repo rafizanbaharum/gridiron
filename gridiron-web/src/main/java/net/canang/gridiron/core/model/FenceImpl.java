@@ -2,8 +2,6 @@ package net.canang.gridiron.core.model;
 
 import com.vividsolutions.jts.geom.Polygon;
 import org.hibernate.annotations.Type;
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,16 +10,16 @@ import java.io.Serializable;
  * @author rafizan.baharum
  * @since 6/28/13
  */
-@Indexed
-@Entity(name = "Turf")
-@Table(name = "TURF")
+//@Indexed
+@Entity(name = "Fence")
+@Table(name = "FENCE")
 public class FenceImpl implements Fence, Serializable {
 
     @Id
-    @DocumentId
+//    @DocumentId
     @Column(name = "ID", nullable = false)
-    @GeneratedValue(generator = "SEQ_TURF")
-    @SequenceGenerator(name = "SEQ_TURF", sequenceName = "SEQ_TURF", allocationSize = 1)
+    @GeneratedValue(generator = "SEQ_FENCE")
+    @SequenceGenerator(name = "SEQ_FENCE", sequenceName = "SEQ_FENCE", allocationSize = 1)
     private Long id;
 
     @Column(name = "CODE")

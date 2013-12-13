@@ -2,8 +2,6 @@ package net.canang.gridiron.core.model;
 
 import com.vividsolutions.jts.geom.Polygon;
 import org.hibernate.annotations.Type;
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,13 +10,13 @@ import java.io.Serializable;
  * @author rafizan.baharum
  * @since 6/28/13
  */
-@Indexed
+//@Indexed
 @Entity(name = "District")
 @Table(name = "DISTRICT")
 public class DistrictImpl implements District, Serializable {
 
     @Id
-    @DocumentId
+//    @DocumentId
     @Column(name = "ID", nullable = false)
     @GeneratedValue(generator = "SEQ_DISTRICT")
     @SequenceGenerator(name = "SEQ_DISTRICT", sequenceName = "SEQ_DISTRICT", allocationSize = 1)

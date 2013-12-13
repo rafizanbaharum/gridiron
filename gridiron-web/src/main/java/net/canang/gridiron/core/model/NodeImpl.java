@@ -3,8 +3,6 @@ package net.canang.gridiron.core.model;
 import com.vividsolutions.jts.geom.Point;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.Type;
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,13 +12,13 @@ import java.util.List;
  * @author rafizan.baharum
  * @since 11/28/13
  */
-@Indexed
+//@Indexed
 @Entity(name = "Node")
 @Table(name = "NODE")
 public class NodeImpl implements Node, Serializable {
 
     @Id
-    @DocumentId
+//    @DocumentId
     @Column(name = "ID", nullable = false)
     @GeneratedValue(generator = "SEQ_NODE")
     @SequenceGenerator(name = "SEQ_NODE", sequenceName = "SEQ_NODE", allocationSize = 1)

@@ -3,8 +3,6 @@ package net.canang.gridiron.core.model;
 import com.vividsolutions.jts.geom.LineString;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.Type;
-import org.hibernate.search.annotations.DocumentId;
-import org.hibernate.search.annotations.Indexed;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,13 +12,13 @@ import java.util.List;
  * @author rafizan.baharum
  * @since 12/9/13
  */
-@Indexed
+//@Indexed
 @Entity(name = "NodeRoute")
 @Table(name = "NODE_ROUTE")
 public class NodeRouteImpl implements NodeRoute {
 
     @Id
-    @DocumentId
+//    @DocumentId
     @Column(name = "ID", nullable = false)
     @GeneratedValue(generator = "SEQ_NODE_ROUTE")
     @SequenceGenerator(name = "SEQ_NODE_ROUTE", sequenceName = "SEQ_NODE_ROUTE", allocationSize = 1)
