@@ -106,7 +106,7 @@ public class NodeController {
         return models;
     }
 
-    @RequestMapping(value = "/addToRoute", method = RequestMethod.GET)
+    @RequestMapping(value = "/beacon", method = RequestMethod.GET)
     @ResponseBody
     public String addNode(@RequestParam Long nodeId, @RequestParam Double x, @RequestParam Double y) {
         log.debug("adding to route: " + x);
@@ -120,7 +120,7 @@ public class NodeController {
     @ResponseBody
     public String addNode(@RequestParam Long nodeId, @RequestParam Double gallon, @RequestParam Double x, @RequestParam Double y) {
         Node node = finder.findNodeById(nodeId);
-        finder.addToNodeRefuel(node, gallon, x, y);
+//        finder.addToNodeRefuel(node, x, y, gallon);
         return "success";
     }
 }

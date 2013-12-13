@@ -56,7 +56,7 @@
         function sendData(coordinateStr) {
             $.ajax({
                 type: "GET",
-                url: '/node/addToRoute',
+                url: '/node/beacon',
                 data: coordinateStr,
                 success: function(data) {
 //                    alert(data);
