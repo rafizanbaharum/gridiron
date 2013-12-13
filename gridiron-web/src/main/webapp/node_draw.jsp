@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/resources/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.min.css">
     <script src="/resources/js/bootstrap.min.js"></script>
     <script type="text/javascript"
             src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -56,7 +56,7 @@
         function sendData(coordinateStr) {
             $.ajax({
                 type: "GET",
-                url: '/node/beacon',
+                url: '${pageContext.request.contextPath}/node/beacon',
                 data: coordinateStr,
                 success: function(data) {
 //                    alert(data);

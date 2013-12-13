@@ -5,11 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/resources/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.min.css">
     <script type="text/javascript"
             src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
     <style>
         #map-canvas img {
@@ -40,7 +40,7 @@
         }
 
         function addRoutes() {
-            $.getJSON('/node/findAllRoutes?nodeId=' + nodeId, function(routes) {
+            $.getJSON('${pageContext.request.contextPath}/node/findAllRoutes?nodeId=' + nodeId, function(routes) {
                 for (var i = 0; i < routes.length; i++) {
                     var route = routes[i];
                     var polyOptions = {
@@ -69,7 +69,7 @@
 
 <div id="map-canvas" style="width:100%; height:20em"></div>
 <div id="data" style="width:100%">
-    <a href="/node/draw/${node.id}">Add To Route</a>
+    <a href="${pageContext.request.contextPath}/node/draw/${node.id}">Add To Route</a>
     <table class="table table-hover" id="sample-table-1">
         <thead>
         <tr>
