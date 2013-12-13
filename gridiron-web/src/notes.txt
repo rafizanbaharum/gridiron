@@ -1,0 +1,51 @@
+
+
+https://code.google.com/p/gwt-google-apis/
+http://www.mapsmaniac.com/2012/02/using-gwt-with-google-maps-api-v3.html
+http://www.mapsmaniac.com/2012/02/search-for-properties-near-your-friends.html
+https://code.google.com/p/gwt-google-apis/wiki/MapsGettingStarted
+https://github.com/branflake2267/GWT-Maps-V3-Api
+
+https://developers.google.com/maps/documentation/javascript/examples/polyline-complex
+https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap
+http://stackoverflow.com/questions/14141886/loading-polylines-coordinates-from-database-and-displaying-it-in-a-map
+
+google console: https://code.google.com/apis/console
+
+MD5:  67:0C:33:5F:17:8B:8B:5C:39:49:90:7B:36:EA:B7:4E
+SHA1: B7:B3:3C:BB:3D:D6:AA:E2:33:9C:FA:9A:BB:12:52:E2:51:0E:39:35
+
+android:AIzaSyDbT0_e_01JB3LJm56gj5Co0aP_0okSLA4
+browserapp:AIzaSyA9PTc9RgylBuf0tSRrQsPI3SSPTjPXOJY
+
+https://developers.google.com/maps/documentation/javascript/examples/drawing-tools
+
+http://stackoverflow.com/questions/15454919/extract-drawingmanager-polygon-path-google-maps-on-click
+http://www.geocodezip.com/blitz-gmap-editor/test5.html
+
+http://workshops.boundlessgeo.com/postgis-intro/spatial_relationships.html#st-distance-and-st-dwithin
+https://developers.google.com/maps/documentation/javascript/drawing
+https://google-developers.appspot.com/maps/documentation/javascript/examples/full/drawing-tools
+https://developers.google.com/maps/documentation/javascript/examples/polygon-arrays
+https://developers.google.com/maps/documentation/javascript/reference?csw=1#InfoWindowOptions
+
+
+http://stackoverflow.com/questions/12596659/infowindow-with-buttons
+
+http://jsfiddle.net/A96Hu/  - drawing with form
+
+https://groups.google.com/forum/#!topic/Google-Maps-API/0AuGXinF19w
+
+
+walk list
+canvassing
+gotv
+volunteer
+data points
+
+
+SPRING DATA
+http://projects.spring.io/spring-data-neo4j/
+http://stackoverflow.com/questions/14147305/maven-issue-with-spring-data-neo4j
+https://blog.codecentric.de/en/2012/02/spring-data-neo4j/
+http://rsiaf.googlecode.com/svn/rs-gis-core/trunk/src/main/java/com/revolsys/gis/jts/JtsGeometryUtil.java
