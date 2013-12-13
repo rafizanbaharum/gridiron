@@ -314,7 +314,7 @@
 
     </dependencies>
     <build>
-        <finalName>acropolis-web</finalName>
+        <finalName>gridiron-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

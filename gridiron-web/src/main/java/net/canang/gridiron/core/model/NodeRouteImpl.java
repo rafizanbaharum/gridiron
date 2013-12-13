@@ -1,12 +1,14 @@
 package net.canang.gridiron.core.model;
 
 import com.vividsolutions.jts.geom.LineString;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.Type;
 import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Indexed;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author rafizan.baharum
@@ -33,6 +35,16 @@ public class NodeRouteImpl implements NodeRoute {
     @ManyToOne(targetEntity = NodeImpl.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "NODE_ID")
     private Node node;
+
+
+    @JsonIgnore
+    @OneToMany(targetEntity = NodeRefuelImpl.class, mappedBy = "route")
+    private List<NodeRefuel> refuels;
+
+    @JsonIgnore
+    @OneToMany(targetEntity = NodeStopImpl.class, mappedBy = "route")
+    private List<NodeStop> stops;
+
 
     @Transient
     private Double length;
@@ -75,5 +87,21 @@ public class NodeRouteImpl implements NodeRoute {
 
     public void setLength(Double length) {
         this.length = length;
+    }
+
+    public List<NodeRefuel> getRefuels() {
+        return refuels;
+    }
+
+    public void setRefuels(List<NodeRefuel> refuels) {
+        this.refuels = refuels;
+    }
+
+    public List<NodeStop> getStops() {
+        return stops;
+    }
+
+    public void setStops(List<NodeStop> stops) {
+        this.stops = stops;
     }
 }

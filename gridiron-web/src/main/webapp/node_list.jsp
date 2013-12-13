@@ -19,6 +19,7 @@
         <thead>
         <tr>
             <th class="center">#</th>
+            <th>Phone</th>
             <th>Name</th>
             <th></th>
         </tr>
@@ -27,6 +28,7 @@
         <c:forEach var="node" items="${nodes}" varStatus="idx">
             <tr>
                 <td>${idx.count}</td>
+                <td>${node.phone}</td>
                 <td><a href="/node/navigate/${node.id}">${node.name}</a></td>
             </tr>
         </c:forEach>

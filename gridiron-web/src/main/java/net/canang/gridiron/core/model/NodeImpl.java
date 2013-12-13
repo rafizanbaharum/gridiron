@@ -49,14 +49,6 @@ public class NodeImpl implements Node, Serializable {
     @OneToMany(targetEntity = NodeRouteImpl.class, mappedBy = "node")
     private List<NodeRoute> routes;
 
-    @JsonIgnore
-    @OneToMany(targetEntity = NodeRefuelImpl.class, mappedBy = "node")
-    private List<NodeRefuel> refuels;
-
-    @JsonIgnore
-    @OneToMany(targetEntity = NodeStopImpl.class, mappedBy = "node")
-    private List<NodeStop> stops;
-
     public NodeImpl() {
     }
 
@@ -122,22 +114,6 @@ public class NodeImpl implements Node, Serializable {
 
     public void setAttributes(List<NodeAttribute> attributes) {
         this.attributes = attributes;
-    }
-
-    public List<NodeRefuel> getRefuels() {
-        return refuels;
-    }
-
-    public void setRefuels(List<NodeRefuel> refuels) {
-        this.refuels = refuels;
-    }
-
-    public List<NodeStop> getStops() {
-        return stops;
-    }
-
-    public void setStops(List<NodeStop> stops) {
-        this.stops = stops;
     }
 
     @Override

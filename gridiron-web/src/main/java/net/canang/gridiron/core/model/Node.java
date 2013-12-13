@@ -56,20 +56,6 @@ public interface Node {
     /**
      * @return
      */
-    List<NodeRefuel> getRefuels();
-
-    void setRefuels(List<NodeRefuel> refuels);
-
-    /**
-     * @return
-     */
-    List<NodeStop> getStops();
-
-    void setStops(List<NodeStop> nodeStops);
-
-    /**
-     * @return
-     */
     List<NodeRoute> getRoutes();
 
     void setRoutes(List<NodeRoute> nodes);
