@@ -34,9 +34,9 @@ public class NodeStopImpl implements NodeStop, Serializable {
     @Type(type = "org.hibernate.spatial.GeometryType")
     private Point location;
 
-    @ManyToOne(targetEntity = NodeImpl.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "NODE_ID")
-    private Node node;
+    @ManyToOne(targetEntity = NodeRouteImpl.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "ROUTE_ID")
+    private NodeRoute route;
 
     public NodeStopImpl() {
     }
@@ -73,12 +73,12 @@ public class NodeStopImpl implements NodeStop, Serializable {
         this.location = location;
     }
 
-    public Node getNode() {
-        return node;
+    public NodeRoute getRoute() {
+        return route;
     }
 
-    public void setNode(Node node) {
-        this.node = node;
+    public void setRoute(NodeRoute route) {
+        this.route = route;
     }
 
     @Override
