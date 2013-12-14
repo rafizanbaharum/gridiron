@@ -1,6 +1,7 @@
 package net.canang.gridiron.web.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,7 +11,9 @@ import java.util.List;
 public class NodeRouteModel {
 
     private Long id;
+    private Date dateCreated;
     private Double length;
+    private CoordinateModel center;
     private List<CoordinateModel> path = new ArrayList<CoordinateModel>();
 
 
@@ -24,6 +27,14 @@ public class NodeRouteModel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     public List<CoordinateModel> getPath() {
@@ -44,5 +55,13 @@ public class NodeRouteModel {
 
     public void setLength(Double length) {
         this.length = length;
+    }
+
+    public CoordinateModel getCenter() {
+        return center;
+    }
+
+    public void setCenter(CoordinateModel center) {
+        this.center = center;
     }
 }

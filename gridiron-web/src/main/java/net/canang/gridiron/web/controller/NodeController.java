@@ -28,7 +28,6 @@ import java.util.List;
 @RequestMapping("/node")
 public class NodeController {
 
-    public static final double RADIUS = 10.0D;
     private Logger log = LoggerFactory.getLogger(NodeController.class);
 
     @Autowired

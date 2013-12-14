@@ -46,9 +46,10 @@ public class Converter {
 
     public NodeRouteModel convert(NodeRoute route) {
         NodeRouteModel routeModel = new NodeRouteModel(route.getId());
+        routeModel.setDateCreated(route.getDateCreated());
         LineString path = route.getPath();
         if (null != path) {
-            // todo: set center
+            routeModel.setCenter(convert(route.getPath().getCentroid().getCoordinate()));
             Coordinate[] coordinates = path.getCoordinates();
             for (Coordinate coordinate : coordinates) {
                 routeModel.addPath(new CoordinateModel(coordinate.x, coordinate.y));

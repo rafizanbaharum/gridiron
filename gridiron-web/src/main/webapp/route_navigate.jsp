@@ -22,41 +22,37 @@
     </script>
 
     <script type="text/javascript">
-        var nodeId = ${node.id};
+        var routeId = ${route.id};
         var map;
         var marker;
-        var center = new google.maps.LatLng(1.5243, 103.64988);
         var data = new google.maps.MVCArray();
 
         function initialize() {
             var mapOptions = {
-                center: center,
                 zoom: 14,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-            addRoutes();
-
+            addRoute();
         }
 
-        function addRoutes() {
-            $.getJSON('${pageContext.request.contextPath}/node/findAllRoutes?nodeId=' + nodeId, function(routes) {
-                for (var i = 0; i < routes.length; i++) {
-                    var route = routes[i];
-                    var polyOptions = {
-                        strokeColor: '#0000FF',
-                        strokeOpacity: 0.5,
-                        strokeWeight: 2,
-                        indexID:route.id,
-                        map:map
-                    };
-                    var poly = new google.maps.Polyline(polyOptions);
-                    var path = route.path;
-                    for (var j = 0; j < path.length; j++) {
-                        var latlng = new google.maps.LatLng(path[j].x, path[j].y);
-                        poly.getPath().push(latlng);
-                    }
+        function addRoute() {
+            $.getJSON('${pageContext.request.contextPath}/route/findRoute?routeId=' + routeId, function(route) {
+                var polyOptions = {
+                    strokeColor: '#0000FF',
+                    strokeOpacity: 0.5,
+                    strokeWeight: 2,
+                    indexID:route.id,
+                    map:map
+                };
+                var poly = new google.maps.Polyline(polyOptions);
+                var path = route.path;
+                for (var j = 0; j < path.length; j++) {
+                    var latlng = new google.maps.LatLng(path[j].x, path[j].y);
+                    poly.getPath().push(latlng);
                 }
+                var center = new google.maps.LatLng(route.center.x, route.center.y);
+                map.panTo(center);
             });
         }
 
@@ -69,7 +65,6 @@
 
 <div id="map-canvas" style="width:100%; height:20em"></div>
 <div id="data" style="width:100%">
-    <a href="${pageContext.request.contextPath}/node/draw/${node.id}">Add To Route</a>
     <table class="table table-hover" id="sample-table-1">
         <thead>
         <tr>
