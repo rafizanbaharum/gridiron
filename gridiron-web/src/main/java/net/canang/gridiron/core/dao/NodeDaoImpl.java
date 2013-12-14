@@ -35,6 +35,11 @@ public class NodeDaoImpl implements NodeDao {
         Session session = sessionFactory.getCurrentSession();
         return (Node) session.get(NodeImpl.class, id);
     }
+    @Override
+    public NodeRoute findRouteById(Long id) {
+        Session session = sessionFactory.getCurrentSession();
+        return (NodeRoute) session.get(NodeRouteImpl.class, id);
+    }
 
     @Override
     public Node findByPhone(String phone) {

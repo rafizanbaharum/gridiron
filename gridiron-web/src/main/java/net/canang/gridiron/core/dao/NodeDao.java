@@ -17,6 +17,8 @@ public interface NodeDao {
 
     Node findByPhone(String phone);
 
+    NodeRoute findRouteById(Long id);
+
     List<Node> find();
 
     List<Node> findAround(Point point);
@@ -70,4 +72,5 @@ public interface NodeDao {
     void updateStop(NodeRoute route, NodeStop stop);
 
     void removeStop(NodeRoute route, NodeStop stop);
+
 }

@@ -55,6 +55,11 @@ public class BizFinderImpl implements BizFinder {
     }
 
     @Override
+    public NodeRoute findNodeRouteById(Long id) {
+        return nodeDao.findRouteById(id);
+    }
+
+    @Override
     public Fence findFenceById(Long id) {
         return decorate(fenceDao.findById(id));
     }

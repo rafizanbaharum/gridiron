@@ -19,6 +19,8 @@ public interface BizFinder {
 
     Node findNodeById(Long id);
 
+    NodeRoute findNodeRouteById(Long id);
+
     List<District> findDistricts();
 
     List<Fence> findFences();
