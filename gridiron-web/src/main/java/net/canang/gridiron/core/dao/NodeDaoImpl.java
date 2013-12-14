@@ -100,17 +100,23 @@ public class NodeDaoImpl implements NodeDao {
     }
 
     @Override
-    public NodeRoute findDailyRoute(Date date) {
+    public NodeRoute findDailyRoute(Node node, Date date) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("select i from NodeRoute i where to_char(i.dateCreated, 'dd/MM/YYYY') = :date");
+        Query query = session.createQuery("select i from NodeRoute i where " +
+                "i.node = :node " +
+                "and to_char(i.dateCreated, 'dd/MM/YYYY') = :date");
         query.setString("date", FORMAT_DAILY.format(date));
+        query.setEntity("node", node);
         return (NodeRoute) query.uniqueResult();
     }
 
     @Override
-    public NodeRoute findHourlyRoute(Date date) {
+    public NodeRoute findHourlyRoute(Node node, Date date) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("select i from NodeRoute i where to_char(i.dateCreated, 'dd/MM/YYYY hh') = :date");
+        Query query = session.createQuery("select i from NodeRoute i where " +
+                "i.node = :node " +
+                "and to_char(i.dateCreated, 'dd/MM/YYYY hh') = :date");
+        query.setEntity("node", node);
         query.setString("date", FORMAT_HOURLY.format(date));
         return (NodeRoute) query.uniqueResult();
     }

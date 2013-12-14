@@ -1,6 +1,5 @@
 package net.canang.gridiron.biz;
 
-import com.sun.org.apache.regexp.internal.RE;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.CoordinateSequence;
 import com.vividsolutions.jts.geom.LineString;
@@ -177,7 +176,7 @@ public class BizFinderImpl implements BizFinder {
             NodeRoute daily = null;
             Date today = new Date();
             if (nodeDao.hasDailyRoute(node, today)) {
-                daily = nodeDao.findDailyRoute(today);
+                daily = nodeDao.findDailyRoute(node, today);
                 daily.setPath(addToLineString(daily.getPath(), x, y));
                 nodeDao.updateRoute(node, daily);
                 log.debug("daily path: " + daily.getPath().toText());
@@ -217,7 +216,7 @@ public class BizFinderImpl implements BizFinder {
             NodeRoute daily = null;
             Date today = new Date();
             if (nodeDao.hasHourlyRoute(node, today)) {
-                daily = nodeDao.findHourlyRoute(today);
+                daily = nodeDao.findHourlyRoute(node, today);
                 daily.setPath(addToLineString(daily.getPath(), x, y));
                 nodeDao.updateRoute(node, daily);
                 log.debug("daily path: " + daily.getPath().toText());

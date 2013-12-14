@@ -7,6 +7,9 @@ import net.canang.gridiron.biz.BizFinder;
 import net.canang.gridiron.core.model.Node;
 import net.canang.gridiron.core.model.NodeImpl;
 import net.canang.gridiron.core.model.RollingType;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
@@ -39,8 +43,22 @@ public class NodeDaoTest {
     @Autowired
     private SessionFactory sessionFactory;
 
+
     @Test
-    public void createNode() {
+    public void testHttpGet() {
+        String uri = "http://107.22.213.125:8080/gridiron-web/node/beacon?nodeId=3&x=5.1639713799999996&y=100.67680923";
+        HttpGet get = new HttpGet(uri);
+        HttpClient client = new DefaultHttpClient();
+        try {
+            client.execute(get);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void createNode
+            () {
         try {
             WKTReader reader = new WKTReader();
             Node node = new NodeImpl();
@@ -56,14 +74,16 @@ public class NodeDaoTest {
     }
 
     @Test
-    public void addRoute() {
+    public void addRoute
+            () {
         Node phone = nodeDao.findByPhone("012 260 6845");
         finder.addToNodeRoute(phone, 1.5223D, 103.64538D);
         finder.addToNodeRoute(phone, 1.5212D, 103.6123488D);
     }
 
     @Test
-    public void find() {
+    public void find
+            () {
         List<Node> nodes = nodeDao.find();
         log.debug("size: " + nodes.size());
         for (Node node : nodes) {
@@ -77,7 +97,8 @@ public class NodeDaoTest {
      * POLYGON((1.51396 103.63293,1.52563 103.6464,1.52992 103.66803,1.52649 103.67361,1.52168 103.67988,1.50349 103.65619,1.50109 103.6561,1.49937 103.64812,1.51388 103.63301,1.51396 103.63293))
      */
     @Test
-    public void findWithin() {
+    public void findWithin
+    () {
         List<Node> nodes = nodeDao.findWithin("" +
                 "POLYGON((" +
                 "1.51396 103.63293," +
@@ -100,7 +121,8 @@ public class NodeDaoTest {
 
 
     @Test
-    public void updateNode() {
+    public void updateNode
+            () {
         String[] names = new String[]{
                 "Ahmad", "Shah", "Yusof", "Salleh", "Noor", "Nasir",
                 "Said", "Yasin", "Yunos", "Zin", "Isa", "Sharif", "Khalid",
@@ -121,7 +143,8 @@ public class NodeDaoTest {
 
 
     @Test
-    public void findAround() {
+    public void findAround
+            () {
 //        List<Node> Nodes = nodeDao.findAround(100.0D, 1.5333D, 103.388D);
 //        for (Node node : Nodes) {
 //            log.debug("Node: " + node);
@@ -129,7 +152,8 @@ public class NodeDaoTest {
     }
 
     @Test
-    public void saveAndFind() {
+    public void saveAndFind
+            () {
         Node Node = new NodeImpl();
         nodeDao.save(Node);
 //        List<Node> Nodes = nodeDao.findAround(1D, 1.5555D, 103.3333D);
@@ -139,7 +163,8 @@ public class NodeDaoTest {
     }
 
     @Test
-    public void findAndUpdate() {
+    public void findAndUpdate
+            () {
         List<Node> Nodes = nodeDao.find();
         for (Node node : Nodes) {
             nodeDao.update(node);
@@ -184,4 +209,5 @@ public class NodeDaoTest {
         phone.append(nos[rand.nextInt(nos.length)]);
         return phone.toString();
     }
+
 }

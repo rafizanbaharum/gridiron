@@ -31,9 +31,9 @@ public interface NodeDao {
 
     List<NodeStop> findStops(Node node);
 
-    NodeRoute findDailyRoute(Date date);
+    NodeRoute findDailyRoute(Node node, Date date);
 
-    NodeRoute findHourlyRoute(Date date);
+    NodeRoute findHourlyRoute(Node node, Date date);
 
     Integer count();
 
