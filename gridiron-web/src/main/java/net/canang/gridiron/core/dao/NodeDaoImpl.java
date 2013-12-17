@@ -35,6 +35,7 @@ public class NodeDaoImpl implements NodeDao {
         Session session = sessionFactory.getCurrentSession();
         return (Node) session.get(NodeImpl.class, id);
     }
+
     @Override
     public NodeRoute findRouteById(Long id) {
         Session session = sessionFactory.getCurrentSession();
@@ -248,4 +249,9 @@ public class NodeDaoImpl implements NodeDao {
         // TODO:
 
     }
+
+    @Override
+    public boolean hasViolated(Node node) {
+        return false;  // TODO:
+  }
 }

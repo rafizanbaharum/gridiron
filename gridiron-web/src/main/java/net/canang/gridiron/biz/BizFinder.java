@@ -5,6 +5,7 @@ import net.canang.gridiron.core.model.Fence;
 import net.canang.gridiron.core.model.Node;
 import net.canang.gridiron.core.model.NodeRoute;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -48,5 +49,7 @@ public interface BizFinder {
     void addToNodeRefuel(NodeRoute route, Double x, Double y, Double gallon);
 
     void addToNodeStop(NodeRoute route, Integer duration, Double x, Double y);
+
+    boolean checkViolation(Node node, Point point);
 
 }

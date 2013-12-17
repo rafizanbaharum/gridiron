@@ -175,6 +175,16 @@ public class BizFinderImpl implements BizFinder {
         }
     }
 
+    @Override
+    public boolean checkViolation(Node node, java.awt.Point point) {
+        // check if node violation any probation
+        if (nodeDao.hasViolated(node)) {
+
+        }
+
+        return false;  // TODO:
+    }
+
     private void addToDailyNodeRoute(Node node, Double x, Double y) {
         try {
             // find or create

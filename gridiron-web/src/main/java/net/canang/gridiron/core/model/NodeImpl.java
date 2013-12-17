@@ -82,14 +82,6 @@ public class NodeImpl implements Node, Serializable {
         this.mpg = mpg;
     }
 
-    public List<NodeRoute> getRoutes() {
-        return routes;
-    }
-
-    public void setRoutes(List<NodeRoute> routes) {
-        this.routes = routes;
-    }
-
     public Point getLocation() {
         return location;
     }
@@ -112,6 +104,15 @@ public class NodeImpl implements Node, Serializable {
 
     public void setAttributes(List<NodeAttribute> attributes) {
         this.attributes = attributes;
+    }
+
+
+    public List<NodeRoute> getRoutes() {
+        return routes;
+    }
+
+    public void setRoutes(List<NodeRoute> routes) {
+        this.routes = routes;
     }
 
     @Override

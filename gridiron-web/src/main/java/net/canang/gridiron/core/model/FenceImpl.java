@@ -5,6 +5,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author rafizan.baharum
@@ -30,6 +31,10 @@ public class FenceImpl implements Fence, Serializable {
 
     @Type(type = "org.hibernate.spatial.GeometryType")
     private Polygon bound;
+
+
+    @OneToMany(targetEntity = FenceProbationImpl.class, mappedBy = "fence")
+    private List<FenceProbation> probations;
 
     @Transient
     private Integer headCount;
@@ -64,6 +69,14 @@ public class FenceImpl implements Fence, Serializable {
 
     public void setBound(Polygon bound) {
         this.bound = bound;
+    }
+
+    public List<FenceProbation> getProbations() {
+        return probations;
+    }
+
+    public void setProbations(List<FenceProbation> probations) {
+        this.probations = probations;
     }
 
     public Integer getHeadCount() {

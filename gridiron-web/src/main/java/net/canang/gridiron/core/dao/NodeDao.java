@@ -73,4 +73,5 @@ public interface NodeDao {
 
     void removeStop(NodeRoute route, NodeStop stop);
 
+    boolean hasViolated(Node node);
 }

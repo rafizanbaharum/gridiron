@@ -2,6 +2,8 @@ package net.canang.gridiron.core.model;
 
 import com.vividsolutions.jts.geom.Polygon;
 
+import java.util.List;
+
 /**
  * @author rafizan.baharum
  * @since 6/29/13
@@ -41,5 +43,13 @@ public interface Fence {
     Integer getHeadCount();
 
     void setHeadCount(Integer headCount);
+
+
+    /**
+     * @return
+     */
+    List<FenceProbation> getProbations();
+
+    void setProbations(List<FenceProbation> probations);
 
 }
